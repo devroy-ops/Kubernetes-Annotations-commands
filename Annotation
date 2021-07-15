@@ -1,0 +1,28 @@
+*******************************Start*********************************
+
+Note:- Annotations commands
+
+Step-1 vi pod1.yml
+
+kind: Pod
+apiVersion: v1
+metadata:
+  name: testpod
+  annotations:
+    description: Humara first annotation command
+spec:
+  containers:
+    - name: c00
+      image: ubuntu
+      command: ["/bin/bash", "-c", "while true; do echo Hello-Bhupinder; sleep 5 ; done"]
+  restartPolicy: Never         # Defaults to Always
+
+
+
+Step-2 kubectl apply -f pod1.yml
+
+Step-3 kubectl describe pod testpod (check annotation command)
+
+Step-4 kubectl delete pod testpod (delete pod)
+
+********************************END****************************************
